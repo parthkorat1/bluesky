@@ -3,7 +3,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
-import Image from 'next/image'
 
 const projects = [
   {
@@ -77,7 +76,7 @@ const Work = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col"
             >
-              <Image
+              <img
                 className="h-48 w-full object-cover"
                 src={project.image}
                 alt={project.title}
