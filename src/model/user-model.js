@@ -1,0 +1,31 @@
+import mongoose from "mongoose";
+
+
+const massegeSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: [true, "Please provide a name"],
+        
+    },
+    email: {
+        type: String,
+        required: [true, "Please provide a email"],
+       
+    },
+    phone: {
+        type: String,
+        required: [true, "Please provide a number"],
+    },
+    message: {
+        type: String,
+        required: [true, "Please provide a message"],
+        
+    }
+   
+   
+   
+})
+
+const Client = mongoose.models.clients || mongoose.model("clients", massegeSchema);
+
+export default Client;
