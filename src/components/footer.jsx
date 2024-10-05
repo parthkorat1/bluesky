@@ -6,7 +6,7 @@ import { Input } from "../components/ui/input"
 import { Button } from "../components/ui/button"
 import { useToast } from "@/hooks/use-toast"
 
-import { Facebook, Twitter, Instagram, Linkedin, GitHub, ArrowRight, MapPin, Phone, Mail, Globe, ChevronUp } from 'lucide-react'
+import {  ArrowRight, MapPin, Phone, Mail, Globe, ChevronUp } from 'lucide-react'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -61,13 +61,13 @@ export default function Footer() {
     }
   ]
 
-  const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#' },
-    { name: 'Twitter', icon: Twitter, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: '#' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
-    { name: 'GitHub', icon: GitHub, href: '#' }
-  ]
+  // const socialLinks = [
+  //   { name: 'Facebook', icon: Facebook, href: '#' },
+  //   { name: 'Twitter', icon: Twitter, href: '#' },
+  //   { name: 'Instagram', icon: Instagram, href: '#' },
+  //   { name: 'LinkedIn', icon: Linkedin, href: '#' },
+  //   { name: 'GitHub', icon: GitHub, href: '#' }
+  // ]
 
   return (
     <footer id='footer' className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative">

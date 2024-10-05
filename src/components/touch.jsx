@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
-import { Code, Globe, Layers, Zap, Sparkles, Shield, Cloud } from "lucide-react";
+import {  Globe,  Zap, Sparkles} from "lucide-react";
 import axios from "axios";
 import { motion } from 'framer-motion'
 
@@ -95,7 +95,7 @@ export default function Touch() {
               Get in <span className="text-primary">Touch</span>
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Ready to transform your business? Reach out to us and let's create something amazing together.
+              Ready to transform your business? Reach out to us and let &apos s create something amazing together.
             </p>
             <div className="flex flex-col space-y-2 md:flex-row md:space-x-4 md:space-y-0">
               <div className="flex items-center space-x-2">
