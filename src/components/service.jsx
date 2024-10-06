@@ -44,7 +44,7 @@ const services = [
       "Intuitive UI/UX design",
       "Push notifications for user engagement",
       "Offline functionality and data synchronization",
-     
+
     ],
     support: [/* support array here */
       "3 months of updates and bug fixes",
@@ -63,7 +63,7 @@ const services = [
       "Chat with AI",
       "Train on your data",
       "Comprehensive AI documentation",
-      
+
     ],
     support: [/* support array here */
       "Ongoing AI maintenance and updates",
@@ -97,13 +97,13 @@ export default function EnhancedServicesNoTabs() {
     setFormData(prevData => ({ ...prevData, [name]: value }))
   }
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     try {
       console.log(formData);
-      
-      const submit = await axios.post('api/touch',formData)
+
+      const submit = await axios.post('api/touch', formData)
       if (submit) {
         setFormData({
           name: '',
@@ -115,19 +115,19 @@ export default function EnhancedServicesNoTabs() {
         })
         toast({
           title: "Message sent successfully",
-          description: "we connect with you soon....", 
+          description: "we connect with you soon....",
         })
-        
+
       }
-      
+
     } catch (error) {
       console.log("An error occurred", error);
       toast({
         title: "Plese fill ritgh data",
-        description: "problem with your credentials , please try again", 
+        description: "problem with your credentials , please try again",
       })
       // addd tosterrrr
-      
+
     }
     setOpen(false)
     // Here you would typically send the data to your server
@@ -156,15 +156,15 @@ export default function EnhancedServicesNoTabs() {
         </motion.div>
 
         <motion.div
-        className="absolute w-96 h-96 rounded-full bg-white opacity-10"
-        style={{ top: '10%', right: '10%' }}
-        animate={{
-          y: [0, -20, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{ duration: 5, repeat: Infinity, repeatType: 'reverse' }}
-      />
-    
+          className="absolute w-96 h-96 rounded-full bg-white opacity-10"
+          style={{ top: '10%', right: '10%' }}
+          animate={{
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ duration: 5, repeat: Infinity, repeatType: 'reverse' }}
+        />
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -237,12 +237,12 @@ export default function EnhancedServicesNoTabs() {
         </div>
       </div>
 
-      
+
       {/* Render your custom popup when a service is selected */}
-      {selectedService && (
+      {/* {selectedService && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="relative bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
-            {/* Close button at the top right corner */}
+           
             <button 
               onClick={closePopup} 
               className="absolute top-2 right-2 p-2 rounded-full bg-gray-200 hover:bg-gray-300"
@@ -292,24 +292,7 @@ export default function EnhancedServicesNoTabs() {
                   required
                 />
               </div>
-              {/* <div className="space-y-2">
-                <Label htmlFor="serviceType">Service Type</Label>
-                <Select
-                  name="serviceType"
-                  value={formData.serviceType}
-                  onValueChange={(value) => handleSelectChange('serviceType', value)}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="webDevelopment">Web Development</SelectItem>
-                    <SelectItem value="mobileDevelopment">Mobile Development</SelectItem>
-                    <SelectItem value="uiuxDesign">UI/UX Design</SelectItem>
-                    <SelectItem value="consulting">Consulting</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div> */}
+             
               <div className="space-y-2">
                 <Label htmlFor="budget">Budget</Label>
                 <Select
@@ -344,7 +327,194 @@ export default function EnhancedServicesNoTabs() {
             <Button onClick={closePopup} className="w-full mt-4">Close</Button>
           </div>
         </div>
-      )}
+      )} */}
+      {/* Render your custom popup when a service is selected scrolleble */}
+      {/* {selectedService && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 overflow-auto">
+          <div className="relative bg-white p-6 md:p-8 rounded-lg shadow-lg max-w-full md:max-w-lg mx-auto w-full max-h-full overflow-y-auto">
+       
+            <button
+              onClick={closePopup}
+              className="absolute top-2 right-2 p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+            >
+              <X className="h-5 w-5 text-gray-600" />
+            </button>
+
+            <h2 className="text-xl md:text-2xl font-bold mb-4">{selectedService.title}</h2>
+            <p className="mb-6 text-sm md:text-base">{selectedService.description}</p>
+
+            <motion.form
+              onSubmit={closePopup}
+              className="space-y-4 mt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="number">Phone Number</Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="budget">Budget</Label>
+                <Select
+                  name="budget"
+                  value={formData.budget}
+                  onValueChange={(value) => handleSelectChange('budget', value)}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a budget range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="lessThan5k">Less than $5,000</SelectItem>
+                    <SelectItem value="5kTo10k">$5,000 - $10,000</SelectItem>
+                    <SelectItem value="10kTo20k">$10,000 - $20,000</SelectItem>
+                    <SelectItem value="moreThan20k">More than $20,000</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <Button onClick={handleSubmit} type="submit" className="w-full">Submit</Button>
+            </motion.form>
+
+            <Button onClick={closePopup} className="w-full mt-4">Close</Button>
+          </div>
+        </div>
+      )} */}
+      {/* Render your custom popup when a service is selected second scroleble */}
+      {selectedService && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="relative bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto h-auto max-h-[90vh] overflow-auto">
+     
+      <button 
+        onClick={closePopup} 
+        className="absolute top-2 right-2 p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+      >
+        <X className="h-5 w-5 text-gray-600" />
+      </button>
+
+      <h2 className="text-xl md:text-2xl font-bold mb-4">{selectedService.title}</h2>
+      <p className="mb-6 text-sm md:text-base">{selectedService.description}</p>
+
+      <motion.form
+        onSubmit={closePopup}
+        className="space-y-4 mt-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="space-y-2">
+          <Label htmlFor="name">Name</Label>
+          <Input
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="phone">Phone Number</Label>
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+       
+        <div className="space-y-2">
+          <Label htmlFor="budget">Budget</Label>
+          <Select
+            name="budget"
+            value={formData.budget}
+            onValueChange={(value) => handleSelectChange('budget', value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select a budget range" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="lessThan5k">Less than $5,000</SelectItem>
+              <SelectItem value="5kTo10k">$5,000 - $10,000</SelectItem>
+              <SelectItem value="10kTo20k">$10,000 - $20,000</SelectItem>
+              <SelectItem value="moreThan20k">More than $20,000</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="message">Message</Label>
+          <Textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <Button onClick={handleSubmit} type="submit" className="w-full">Submit</Button>
+      </motion.form>
+
+      <Button onClick={closePopup} className="w-full mt-4">Close</Button>
+    </div>
+  </div>
+        )}
+   
+
+
+
+
+
+
     </section>
   )
 }
