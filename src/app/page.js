@@ -8,6 +8,7 @@ import Special from '../components/special'
 import Homepage from '../components/home'
 import Footer from '../components/footer'
 import Work from 'src/components/work'
+import StickyNavbar from 'src/components/nevbor'
 
 
 export default function HomePage() {
@@ -30,7 +31,7 @@ export default function HomePage() {
       
      
       <main className="flex-1">
-      
+        <StickyNavbar />
         <Homepage />
         <Special />
         <Feature />

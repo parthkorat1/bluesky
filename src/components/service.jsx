@@ -17,14 +17,32 @@ import { useToast } from "@/hooks/use-toast"
 const services = [
   {
     title: "Web Development",
-    description: "Custom websites tailored to your needs",
+    description: "SINGLE PAGE",
     price: "₹5000-10000+",
     icon: Globe,
     features: [
       "Responsive design for all devices",
       "CMS integration for easy content management",
+      "Custom business cards and designs.",
+      "Social media link.",
+      "Cross-browser compatibility",
+    ],
+    support: [
+      "30 days free trial period",
+      "Regular security updates",
+      "Optional maintenance packages available",
+    ],
+  },
+  {
+    title: "Web Development",
+    description: "MULTIPLE PAGE",
+    price: "₹10000-30000+",
+    icon: Globe,
+    features: [
+      "Responsive design for all devices",
+      "CMS integration for easy content management",
       "E-commerce functionality with secure payment gateways",
-      "Performance optimization for fast loading times",
+      "Services , Products , Blog pages.",
       "Cross-browser compatibility",
     ],
     support: [
@@ -36,7 +54,7 @@ const services = [
   {
     title: "Mobile Apps",
     description: "Native and cross-platform mobile applications",
-    price: "₹10000-20000+",
+    price: "₹20000-50000+",
     icon: Layers,
     features: [/* features array here */
       "iOS and Android native app development",

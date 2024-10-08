@@ -10,7 +10,7 @@ const massegeSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, "Please provide a email"],
-       
+        unique: false,
     },
     phone: {
         type: String,
