@@ -20,7 +20,11 @@ const massegeSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a message"],
         
-    }
+    },
+    date: {
+        type: Date,
+        default: Date.now,
+    },
    
    
    
