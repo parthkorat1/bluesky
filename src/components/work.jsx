@@ -12,7 +12,7 @@ const projects = [
     image: 'https://okcredit-blog-images-prod.storage.googleapis.com/2021/04/ecommerce3-2.jpg',
     tags: ['React', 'Node.js', 'MongoDB','NextJs'],
     liveUrl: 'https://example.com/ecommerce',
-    githubUrl: 'https://github.com/example/ecommerce',
+   // githubUrl: 'https://github.com/example/ecommerce',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const projects = [
     image: 'https://www.ispringsolutions.com/blog/wp-content/uploads/2019/04/Top-1.png',
     tags: ['NextJs', 'Express', 'PostgreSQL'],
     liveUrl: 'https://example.com/taskapp',
-    githubUrl: 'https://github.com/example/taskapp',
+   // githubUrl: 'https://github.com/example/taskapp',
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const projects = [
     image: 'https://hire4event.com/blogs/wp-content/uploads/2019/04/event-services.jpg',
     tags: ['Gemini', 'NextJS', 'MERN'],
     liveUrl: 'https://example.com/chatbot',
-    githubUrl: 'https://github.com/example/chatbot',
+   // githubUrl: 'https://github.com/example/chatbot',
   }
 //   {
 //     id: 4,
@@ -107,7 +107,7 @@ const Work = () => {
                   <ExternalLink size={16} className="mr-2" />
                   View Live
                 </motion.a>
-                <motion.a
+                {/* <motion.a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -117,7 +117,7 @@ const Work = () => {
                 >
                   <Github size={16} className="mr-2" />
                   View Code
-                </motion.a>
+                </motion.a> */}
               </div>
             </motion.div>
           ))}

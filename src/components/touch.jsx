@@ -17,6 +17,7 @@ import SmallWhiteParticles from "./rectengle";
 export default function Touch() {
   // State to hold form data, including phone
   const { toast } = useToast()
+  const [Loading,setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,7 +36,7 @@ export default function Touch() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // prevent default form submission behavior
-    console.log("Form Data:", formData); // log the form data to the console
+    setLoading(true)
 
     try {
       const upload = await axios.post('api/touch', formData);
@@ -53,13 +54,14 @@ export default function Touch() {
           description: "we connect with you soon....",
         })
       }
+      setLoading(false)
     } catch (error) {
       console.log("Error while upload form data:", error);
       toast({
         title: "Something went wrong",
         description: "Plese try angain carefully....",
       })
-
+      setLoading(false)
     }
   };
 
@@ -145,7 +147,7 @@ export default function Touch() {
                 onChange={handleChange}
               />
               <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-                Send Message
+               {Loading ? "Loading...." : "Send Message"}
               </Button>
             </form>
           </div>
