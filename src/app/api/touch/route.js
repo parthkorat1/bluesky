@@ -19,7 +19,7 @@ export async function POST(request) {
         const reqBody = await request.json()
         const {name,email,phone,message } = reqBody
 
-        console.log("checking", reqBody)
+       
 
         
         const newClient = new Client({
@@ -34,8 +34,7 @@ export async function POST(request) {
 
     
 
-        console.log("client save veriable", saveClient);
-        console.log("client crete save", newClient);
+       
 
         //for mails
         const { data, error } = await resend.emails.send({
@@ -46,7 +45,7 @@ export async function POST(request) {
           });
           
           if (error) {
-            console.error('Failed to send email:', error);
+          
             return NextResponse.json({ message: 'Failed to send email', success: false }, { status: 500 });
           }
 
@@ -57,7 +56,7 @@ export async function POST(request) {
         })
 
     } catch (error) {
-        console.log("ree",error.message)
+       
         return NextResponse.json({ error: error.message }, { status: 500 })
 
     }

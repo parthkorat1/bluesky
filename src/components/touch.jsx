@@ -40,7 +40,7 @@ export default function Touch() {
 
     try {
       const upload = await axios.post('api/touch', formData);
-      console.log("Form data uploaded successfully:", upload.data);
+      
 
       if (upload) {
         setFormData({
@@ -56,7 +56,7 @@ export default function Touch() {
       }
       setLoading(false)
     } catch (error) {
-      console.log("Error while upload form data:", error);
+     
       toast({
         title: "Something went wrong",
         description: "Plese try angain carefully....",

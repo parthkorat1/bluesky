@@ -16,7 +16,7 @@ export default function Footer() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Signed up with:', email)
+   
     toast({
       title: "fill the form with your credentials",
       description: "plese get in touch with us", 

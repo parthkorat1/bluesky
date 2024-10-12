@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "BlueSky",
-  description: "Software service",
+  description: "Software service company.",
 };
 
 export default function RootLayout({ children }) {
