@@ -11,7 +11,7 @@ const projects = [
     description: 'A fully responsive e-commerce platform with real-time inventory management.',
     image: 'https://okcredit-blog-images-prod.storage.googleapis.com/2021/04/ecommerce3-2.jpg',
     tags: ['React', 'Node.js', 'MongoDB','NextJs'],
-    liveUrl: 'https://example.com/ecommerce',
+    liveUrl: 'https://jewelry-eta.vercel.app/',
    // githubUrl: 'https://github.com/example/ecommerce',
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     description: 'An upcoming event management application with real-time updates and notifications.',
     image: 'https://hire4event.com/blogs/wp-content/uploads/2019/04/event-services.jpg',
     tags: ['Gemini', 'NextJS', 'MERN'],
-    liveUrl: 'https://example.com/chatbot',
+    liveUrl: 'https://allevent.vercel.app/',
    // githubUrl: 'https://github.com/example/chatbot',
   }
 //   {
