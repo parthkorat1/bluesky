@@ -20,7 +20,7 @@ const projects = [
     description: 'A ultimate lernet platform with heavy functionality and performance monitoring.',
     image: 'https://www.ispringsolutions.com/blog/wp-content/uploads/2019/04/Top-1.png',
     tags: ['NextJs', 'Express', 'PostgreSQL'],
-    liveUrl: 'https://example.com/taskapp',
+    liveUrl: 'https://skillstream.vercel.app/',
    // githubUrl: 'https://github.com/example/taskapp',
   },
   {
